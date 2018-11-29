@@ -3,5 +3,6 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Adopt' do
-    pod 'Alamofire', '~> 4.7'
+    pod 'Alamofire', '~> 4.8'
+    pod 'AlamofireImage', '~> 3.5'
 end

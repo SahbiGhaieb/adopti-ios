@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 class HomeController: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource  {
     
     
@@ -49,14 +50,18 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
         let contentView = cellule.viewWithTag(0)
         
         //let movieImg = contentView?.viewWithTag(1) as! UIImageView
-        
+        let petImg = contentView?.viewWithTag(1) as! UIImageView
         let petName = contentView?.viewWithTag(2) as! UILabel
+        
         //cellule.imageView.image = (imageArray [indexPath.row])
         //let iconName = imageArray[indexPath.row]
-        let iconName = imageArray[1]
-        cellule.imageView?.image = UIImage(named: iconName)
+        //let iconName = imageArray[1]
+        
         let pet  = pets[ indexPath.item] as! Dictionary<String,Any>
+        let petImage = pet["photo"] as! String
         petName.text = pet["name"] as! String
+        petImg.af_setImage(withURL: URL(string: petImage)!)
+        //cellule.imageView?.image = UIImage(named: petImage)
         print(petName.text)
         print(pets.count)
         return cellule
@@ -132,8 +137,8 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJzYWhiaSIsImxhc3ROYW1lIjoiZ2hhaWViIiwiZW1haWwiOiJtb2hhbWVkc2FoYmkuZ2hhaWViQGVzcHJpdC50biIsInBob3RvIjoic2FoYmkucG5nIiwibnVtX3RlbCI6IjU4Mjk3NDgwIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJjcmVhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoifSwiaWF0IjoxNTQzMzY0NTc0fQ.k0f4PeGd7S1QkT2I8MNVZNF3HbUBxE7ZyFQbBHR43_k"
         
         
-        let url: String = "http://192.168.1.2:3000/showallpets"
-        
+        //let url: String = "http://192.168.1.2:3000/showallpets"
+        let url: String = "http://192.168.43.240:3000/showallpets"
         //turn off SSL
         enableCertificatePinning()
         
