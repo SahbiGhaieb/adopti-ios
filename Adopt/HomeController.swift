@@ -15,18 +15,18 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     
    private var sessionManager: SessionManager?
     
-    private func enableCertificatePinning() {
-        let certificates: [SecCertificate] = []
-        let trustPolicy = ServerTrustPolicy.pinCertificates(
-            certificates: certificates,
-            validateCertificateChain: false,
-            validateHost: false)
-        let trustPolicies = [ "www.apple.com": trustPolicy ]
-        let policyManager =  ServerTrustPolicyManager(policies: trustPolicies)
-        sessionManager = SessionManager(
-            configuration: .default,
-            serverTrustPolicyManager: policyManager)
-    }
+//    private func enableCertificatePinning() {
+//        let certificates: [SecCertificate] = []
+//        let trustPolicy = ServerTrustPolicy.pinCertificates(
+//            certificates: certificates,
+//            validateCertificateChain: false,
+//            validateHost: false)
+//        let trustPolicies = [ "www.apple.com": trustPolicy ]
+//        let policyManager =  ServerTrustPolicyManager(policies: trustPolicies)
+//        sessionManager = SessionManager(
+//            configuration: .default,
+//            serverTrustPolicyManager: policyManager)
+//    }
     
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -62,7 +62,7 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
         petName.text = pet["name"] as! String
         petImg.af_setImage(withURL: URL(string: petImage)!)
         //cellule.imageView?.image = UIImage(named: petImage)
-        print(petName.text)
+        print(petImage)
         print(pets.count)
         return cellule
     }
@@ -110,11 +110,13 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
     
-    
+    //var tokenkey =
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(pets.count)
+        //print(pets.count)
         FetchData()        // Do any additional setup after loading the view.
+        
+        print(LoginController.token)
     }
     
     func FetchData() {
@@ -134,23 +136,24 @@ override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        }
 
         
-        let token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJzYWhiaSIsImxhc3ROYW1lIjoiZ2hhaWViIiwiZW1haWwiOiJtb2hhbWVkc2FoYmkuZ2hhaWViQGVzcHJpdC50biIsInBob3RvIjoic2FoYmkucG5nIiwibnVtX3RlbCI6IjU4Mjk3NDgwIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJjcmVhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoifSwiaWF0IjoxNTQzMzY0NTc0fQ.k0f4PeGd7S1QkT2I8MNVZNF3HbUBxE7ZyFQbBHR43_k"
+        //let token: String = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoxLCJmaXJzdE5hbWUiOiJzYWhiaSIsImxhc3ROYW1lIjoiZ2hhaWViIiwiZW1haWwiOiJtb2hhbWVkc2FoYmkuZ2hhaWViQGVzcHJpdC50biIsInBob3RvIjoic2FoYmkucG5nIiwibnVtX3RlbCI6IjU4Mjk3NDgwIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJjcmVhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoiLCJ1cGRhdGVkQXQiOiIyMDE4LTExLTI2VDAwOjAwOjAwLjAwMFoifSwiaWF0IjoxNTQzMzY0NTc0fQ.k0f4PeGd7S1QkT2I8MNVZNF3HbUBxE7ZyFQbBHR43_k"
         
         
-        //let url: String = "http://192.168.1.2:3000/showallpets"
-        let url: String = "http://192.168.43.240:3000/showallpets"
+        //let url: String = "http://192.168.1.8:3000/showallpets"
+        let url: String = "http://192.168.1.7:3000/showallpets"
+        
         //turn off SSL
-        enableCertificatePinning()
+        //enableCertificatePinning()
         
         //let url: String = "https://jsonplaceholder.typicode.com/todos/1"
         let headers = [
-            "Authorization": "Bearer \(token)",
+            "Authorization": "Bearer \(LoginController.token)",
             "Content-Type": "application/X-Access-Token"
         ]
         //let Auth_header    = [ "Authorization" : token ]
         
         sessionManager?.request(url, headers: headers).responseJSON { response in
-            print(response.result.value)
+            //print(response.result.value)
             self.pets = response.result.value as! NSArray
             self.collectionView.reloadData()
         }
