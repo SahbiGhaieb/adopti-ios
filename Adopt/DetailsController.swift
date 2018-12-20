@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+<<<<<<< HEAD
 import Alamofire
 import AlamofireImage
 
@@ -21,10 +22,16 @@ class DetailsController: UIViewController {
     @IBOutlet weak var gender: UILabel!
     @IBOutlet weak var age: UILabel!
     @IBOutlet weak var size: UILabel!
+=======
+
+class DetailsController: UIViewController {
+
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
     @IBOutlet weak var detailTitle: UILabel!
     @IBOutlet weak var detailImage: UIImageView!
     var labelText = String()
     var myImage: UIImage!
+<<<<<<< HEAD
     var imageDict = String()
     var petDetails : NSArray = []
     var id = Int()
@@ -45,6 +52,16 @@ class DetailsController: UIViewController {
         
         //detailTitle.text = labelText
         //detailImage.image = UIImage(named: petImg)
+=======
+    var petImg = String()
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        detailTitle.text = labelText
+        detailImage.image = UIImage(named: petImg)
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
     }
     
     @IBAction func addFavourite(_ sender: Any) {
@@ -53,6 +70,7 @@ class DetailsController: UIViewController {
         let managedContext = persistantContainer?.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Pet", in: managedContext!)
         let movie = NSManagedObject(entity : entity!, insertInto: managedContext!)
+<<<<<<< HEAD
         movie.setValue(imageDict , forKey: "petImage")
         movie.setValue(name.text, forKey: "petName")
         do{
@@ -65,6 +83,13 @@ class DetailsController: UIViewController {
             alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default,handler: nil))
             
             self.present(alertController, animated: true, completion: nil)
+=======
+        movie.setValue(petImg , forKey: "petImage")
+        movie.setValue(labelText, forKey: "petName")
+        do{
+            try managedContext?.save()
+            print("pet saved")
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         }
         catch let error as NSError
         {
@@ -74,6 +99,7 @@ class DetailsController: UIViewController {
     }
     
     
+<<<<<<< HEAD
     func FetchData() {
         let sa = String(id)
         Alamofire.request(url+sa).responseJSON{
@@ -110,6 +136,8 @@ class DetailsController: UIViewController {
     
     
     
+=======
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
     
    
     

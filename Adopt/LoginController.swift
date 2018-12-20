@@ -7,11 +7,17 @@
 //
 
 import UIKit
+<<<<<<< HEAD
 import FBSDKLoginKit
 import FacebookLogin
 import FacebookCore
 
 
+=======
+import Alamofire
+import AlamofireObjectMapper
+import SwiftyJSON
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
 
 class LoginController: UIViewController {
     /*
@@ -25,6 +31,7 @@ class LoginController: UIViewController {
     }
     */
     
+<<<<<<< HEAD
    
     
     var dict : [String : AnyObject]!
@@ -78,6 +85,78 @@ class LoginController: UIViewController {
     
     
 
+=======
+    @IBOutlet weak var passwordOutlet: UITextField!
+    @IBOutlet weak var emailOutlet: UITextField!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        // Do any additional setup after loading the view.
+    }
+    
+    
+    public static var token: String?
+    @IBAction func loginAction(_ sender: Any) {
+        let email:String = emailOutlet.text!
+        let password:String = passwordOutlet.text!
+        
+        //alamofire login request
+        let parameters: Parameters = [
+            "email": email,
+            "password": password
+        ]
+        
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+        
+        let url = "http://192.168.1.7:3000/login"
+        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseObject { (response: DataResponse<UserResponse>) in
+            switch response.result {
+            case .success(let data):
+                //debugPrint(response)
+                let json = JSON(data)
+                //LoginController.token = json["token"].stringValue
+                //print("-------------------------------------------------------------------")
+                let userResponse = response.result.value
+                
+                //UserDefaults.standard.set(true, forKey: “userlogin”)
+                //print(userResponse!.user?.firstName)
+                
+                //print("Token fel login "+LoginController.token!)
+                //print(token)
+                
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+            
+
+        }
+        
+        
+        Alamofire.request(url, method:.post, parameters:parameters, headers:headers).responseJSON { response in
+            switch response.result {
+            case .success(let data):
+                debugPrint(response)
+                let json = JSON(data)
+                LoginController.token = json["token"].stringValue
+                //print("Token fel login "+LoginController.token!)
+                //print(token)
+
+
+            case .failure(let error):
+                print(error)
+            }
+
+        }
+        
+        
+        
+    }
+    
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
     /*
     // MARK: - Navigation
 

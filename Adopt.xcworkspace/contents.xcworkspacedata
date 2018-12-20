@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+<<<<<<< HEAD
+=======
+      location = "group:/Users/souhailkr/Desktop/doc/Adopt/Adopt/UserResponse.swift">
+   </FileRef>
+   <FileRef
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
       location = "group:Adopt.xcodeproj">
    </FileRef>
    <FileRef

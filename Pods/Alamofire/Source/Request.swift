@@ -320,6 +320,7 @@ extension Request: CustomDebugStringConvertible {
 
         var headers: [AnyHashable: Any] = [:]
 
+<<<<<<< HEAD
         if let additionalHeaders = session.configuration.httpAdditionalHeaders {
             for (field, value) in additionalHeaders where field != AnyHashable("Cookie") {
                 headers[field] = value
@@ -335,6 +336,18 @@ extension Request: CustomDebugStringConvertible {
         for (field, value) in headers {
             let escapedValue = String(describing: value).replacingOccurrences(of: "\"", with: "\\\"")
             components.append("-H \"\(field): \(escapedValue)\"")
+=======
+        session.configuration.httpAdditionalHeaders?.filter {  $0.0 != AnyHashable("Cookie") }
+                                                    .forEach { headers[$0.0] = $0.1 }
+
+        request.allHTTPHeaderFields?.filter { $0.0 != "Cookie" }
+                                    .forEach { headers[$0.0] = $0.1 }
+
+        components += headers.map {
+            let escapedValue = String(describing: $0.value).replacingOccurrences(of: "\"", with: "\\\"")
+
+            return "-H \"\($0.key): \(escapedValue)\""
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         }
 
         if let httpBodyData = request.httpBody, let httpBody = String(data: httpBodyData, encoding: .utf8) {

@@ -611,6 +611,10 @@ open class SessionManager {
         to url: URLConvertible,
         method: HTTPMethod = .post,
         headers: HTTPHeaders? = nil,
+<<<<<<< HEAD
+=======
+        queue: DispatchQueue? = nil,
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         encodingCompletion: ((MultipartFormDataEncodingResult) -> Void)?)
     {
         do {
@@ -620,10 +624,18 @@ open class SessionManager {
                 multipartFormData: multipartFormData,
                 usingThreshold: encodingMemoryThreshold,
                 with: urlRequest,
+<<<<<<< HEAD
                 encodingCompletion: encodingCompletion
             )
         } catch {
             DispatchQueue.main.async { encodingCompletion?(.failure(error)) }
+=======
+                queue: queue,
+                encodingCompletion: encodingCompletion
+            )
+        } catch {
+            (queue ?? DispatchQueue.main).async { encodingCompletion?(.failure(error)) }
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         }
     }
 
@@ -654,6 +666,10 @@ open class SessionManager {
         multipartFormData: @escaping (MultipartFormData) -> Void,
         usingThreshold encodingMemoryThreshold: UInt64 = SessionManager.multipartFormDataEncodingMemoryThreshold,
         with urlRequest: URLRequestConvertible,
+<<<<<<< HEAD
+=======
+        queue: DispatchQueue? = nil,
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         encodingCompletion: ((MultipartFormDataEncodingResult) -> Void)?)
     {
         DispatchQueue.global(qos: .utility).async {
@@ -677,7 +693,11 @@ open class SessionManager {
                         streamFileURL: nil
                     )
 
+<<<<<<< HEAD
                     DispatchQueue.main.async { encodingCompletion?(encodingResult) }
+=======
+                    (queue ?? DispatchQueue.main).async { encodingCompletion?(encodingResult) }
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                 } else {
                     let fileManager = FileManager.default
                     let tempDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory())
@@ -713,7 +733,11 @@ open class SessionManager {
                         }
                     }
 
+<<<<<<< HEAD
                     DispatchQueue.main.async {
+=======
+                    (queue ?? DispatchQueue.main).async {
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                         let encodingResult = MultipartFormDataEncodingResult.success(
                             request: upload,
                             streamingFromDisk: true,
@@ -733,7 +757,11 @@ open class SessionManager {
                     }
                 }
 
+<<<<<<< HEAD
                 DispatchQueue.main.async { encodingCompletion?(.failure(error)) }
+=======
+                (queue ?? DispatchQueue.main).async { encodingCompletion?(.failure(error)) }
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
             }
         }
     }

@@ -85,6 +85,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Login"/>
                                 <connections>
+<<<<<<< HEAD
                                     <segue destination="hvM-1M-F9P" kind="show" id="QEL-vQ-dgn"/>
                                 </connections>
                             </button>
@@ -98,10 +99,23 @@
                                     <action selector="Auth:" destination="uSs-je-is8" eventType="touchUpInside" id="6rb-9Q-MdF"/>
                                 </connections>
                             </button>
+=======
+                                    <action selector="loginAction:" destination="uSs-je-is8" eventType="touchUpInside" id="Uk4-kc-5kq"/>
+                                    <segue destination="hvM-1M-F9P" kind="show" id="QEL-vQ-dgn"/>
+                                </connections>
+                            </button>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="1zg-o0-RtT"/>
                     </view>
+<<<<<<< HEAD
+=======
+                    <connections>
+                        <outlet property="emailOutlet" destination="Dak-hK-gSc" id="KAd-te-WQy"/>
+                        <outlet property="passwordOutlet" destination="zy9-Qf-rrX" id="lGk-vX-gLw"/>
+                    </connections>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BMg-aN-MlP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -117,7 +131,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="J70-dB-E5Q"/>
                     </view>
+<<<<<<< HEAD
                     <tabBarItem key="tabBarItem" selectedImage="icons8-map-marker-50" systemItem="search" id="X6l-Fo-oE8"/>
+=======
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="X6l-Fo-oE8"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hh5-wq-3P5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -133,7 +151,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="34a-yh-1Bc"/>
                     </view>
+<<<<<<< HEAD
                     <tabBarItem key="tabBarItem" selectedImage="icons8-map-marker-25" systemItem="favorites" id="sDg-77-Afq"/>
+=======
+                    <tabBarItem key="tabBarItem" systemItem="search" id="sDg-77-Afq"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                     <size key="freeformSize" width="375" height="667"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pEZ-Rn-GAQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -208,7 +230,11 @@
                                 </items>
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ITe-gf-ahd">
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="108" width="375" height="143"/>
+=======
+                                <rect key="frame" x="16" y="108" width="343" height="143"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="veS-cB-d92">
@@ -225,6 +251,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="141" height="136"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+<<<<<<< HEAD
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="4" translatesAutoresizingMaskIntoConstraints="NO" id="irF-2T-mbm">
                                                     <rect key="frame" x="0.0" y="0.0" width="139" height="136"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,6 +262,17 @@
                                                     <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+=======
+                                                <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="irF-2T-mbm">
+                                                    <rect key="frame" x="0.0" y="0.0" width="141" height="108"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drx-t7-MEx">
+                                                    <rect key="frame" x="15" y="103" width="111" height="24"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -250,6 +288,7 @@
                                     <outlet property="delegate" destination="kuU-Fx-aAr" id="Ldg-fp-uOZ"/>
                                 </connections>
                             </collectionView>
+<<<<<<< HEAD
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="URh-09-lkj">
                                 <rect key="frame" x="0.0" y="287" width="375" height="143"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -358,6 +397,13 @@
                                 <color key="backgroundColor" red="0.59559357170000005" green="0.76646190879999998" blue="0.97712916139999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dogs" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Tk-hf-g6y">
+                                <rect key="frame" x="16" y="79" width="41" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -365,7 +411,10 @@
                         <viewLayoutGuide key="safeArea" id="Hxm-I0-X9J"/>
                     </view>
                     <navigationItem key="navigationItem" title="Pets" id="EOC-zq-BdS">
+<<<<<<< HEAD
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="RcU-GX-k7F"/>
+=======
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="bookmarks" id="i0o-9H-kj1">
                             <connections>
                                 <segue destination="d6g-P8-r38" kind="show" id="HZF-MA-2pk"/>
@@ -375,8 +424,11 @@
                     <size key="freeformSize" width="375" height="667"/>
                     <connections>
                         <outlet property="collectionView" destination="ITe-gf-ahd" id="FMr-6k-Scl"/>
+<<<<<<< HEAD
                         <outlet property="collectionViewc" destination="URh-09-lkj" id="u57-Xl-Wos"/>
                         <outlet property="collectionViewd" destination="osL-fA-DsT" id="dcG-nY-dyZ"/>
+=======
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                         <segue destination="fwb-7B-5wI" kind="show" identifier="toDetails" id="PMO-qL-lXZ"/>
                     </connections>
                 </viewController>
@@ -392,14 +444,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+<<<<<<< HEAD
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH5-VG-7ug">
                                 <rect key="frame" x="16" y="300" width="343" height="21"/>
+=======
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH5-VG-7ug">
+                                <rect key="frame" x="166" y="339" width="42" height="21"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jVk-8d-tdR">
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="64" width="375" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -485,6 +543,11 @@
                                 <color key="textColor" red="0.01375605911" green="0.48569566009999998" blue="0.99725490809999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+=======
+                                <rect key="frame" x="67" y="107" width="240" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7wF-5L-SAU"/>
@@ -497,6 +560,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+<<<<<<< HEAD
                         <outlet property="age" destination="ea3-Zn-ND5" id="iNK-ba-IMP"/>
                         <outlet property="breed" destination="uiA-8V-nf9" id="5ts-zB-tz2"/>
                         <outlet property="desc" destination="7fi-QA-MpY" id="bdP-ZX-73A"/>
@@ -505,6 +569,10 @@
                         <outlet property="gender" destination="gWa-bm-AAU" id="KHT-AK-3kp"/>
                         <outlet property="name" destination="cH5-VG-7ug" id="EKu-Xt-JQk"/>
                         <outlet property="size" destination="jMX-fy-D3B" id="yBh-6l-DcC"/>
+=======
+                        <outlet property="detailImage" destination="jVk-8d-tdR" id="z1Z-kI-57j"/>
+                        <outlet property="detailTitle" destination="cH5-VG-7ug" id="sc4-zb-Ak7"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CQA-lP-UpZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -616,7 +684,11 @@
         <scene sceneID="c2F-Vi-MWO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5NG-95-a09" sceneMemberID="viewController">
+<<<<<<< HEAD
                     <tabBarItem key="tabBarItem" systemItem="recents" id="Sly-me-qHA"/>
+=======
+                    <tabBarItem key="tabBarItem" systemItem="mostRecent" id="Sly-me-qHA"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Tuv-Vk-vbO">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -634,12 +706,17 @@
     </scenes>
     <resources>
         <image name="1" width="920" height="690"/>
+<<<<<<< HEAD
         <image name="4" width="570" height="375"/>
         <image name="Sans titre" width="198" height="193"/>
         <image name="background2" width="323" height="610"/>
         <image name="icons8-map-marker-25" width="25" height="25"/>
         <image name="icons8-map-marker-50" width="50" height="50"/>
         <image name="login-with-facebook-button-png-6" width="1071" height="205"/>
+=======
+        <image name="Sans titre" width="198" height="193"/>
+        <image name="background2" width="323" height="610"/>
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="cxb-xO-dcm"/>

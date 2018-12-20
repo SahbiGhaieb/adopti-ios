@@ -8,7 +8,10 @@
 
 import UIKit
 import CoreData
+<<<<<<< HEAD
 import AlamofireImage
+=======
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
 
 class FavouriteController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
@@ -25,9 +28,13 @@ class FavouriteController: UIViewController,UITableViewDelegate,UITableViewDataS
         let petImg = content!.viewWithTag(1) as! UIImageView
         let petLabel = content!.viewWithTag(2) as! UILabel
         let pet = petsArray[indexPath.row]
+<<<<<<< HEAD
         //petImg.image = UIImage(named: pet.value(forKey: "petImage") as! String)
         petImg.af_setImage(withURL: URL(string: pet.value(forKey: "petImage") as! String)!)
 
+=======
+        petImg.image = UIImage(named: pet.value(forKey: "petImage") as! String)
+>>>>>>> 0aca2924fc81e86baaa438c90b6dcffa517124a3
         petLabel.text = pet.value(forKey: "petName") as! String
         
         return cell
