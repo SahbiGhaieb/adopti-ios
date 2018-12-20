@@ -1,9 +1,8 @@
 //
 //  UserResponse.swift
-//  Adopt
+//  
 //
-//  Created by mmi on 20/12/2018.
-//  Copyright © 2018 ESPRIT. All rights reserved.
+//  Created by SouhailKr on 12/12/18.
 //
 
 import UIKit
