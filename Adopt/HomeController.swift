@@ -23,7 +23,8 @@ class HomeController: UIViewController,UICollectionViewDelegate,UICollectionView
     
     var imageArray = ["1","2","3","4"]
     var ima = [UIImage(named : "1"),UIImage(named : "2"),UIImage(named : "3"),UIImage(named : "4")]
-    let url = "http://192.168.43.5:3000/getpets"
+    //let url = "http://192.168.43.5:3000/getpets"
+    let url = "http://192.168.1.3:3000/showallpets"
     
     var movieId:Int?
     
